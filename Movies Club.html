@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Movies Club</title>
+
+<style>
+body { margin:0; font-family:Arial; background:#0f0f0f; color:white; }
+header { background:black; padding:15px; text-align:center; font-size:24px; }
+
+.header-box {
+  display:inline-block;
+  background:red;
+  padding:8px 20px;
+  border-radius:6px;
+}
+
+.search-box { text-align:center; margin:20px; }
+.search-box input { padding:10px; width:250px; border-radius:5px; border:none; }
+
+.section-title { margin:20px; }
+
+.movies {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+  padding:20px;
+}
+
+.movie { background:#1c1c1c; border-radius:10px; overflow:hidden; }
+.movie img { width:100%; height:250px; object-fit:cover; }
+.full-poster { object-fit: contain; width:100%; height:250px; background:#000; }
+.full-poster { object-fit: contain; background:#000; }
+.info { padding:10px; font-size:13px; }
+
+.btn {
+  width:100%; padding:8px; margin-top:8px;
+  background:#007bff; color:white; border:none;
+  border-radius:5px; cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header><div class="header-box">🎬 Movies Club</div></header>
+
+<div class="search-box">
+<input type="text" id="search" placeholder="Search movie..." onkeyup="searchMovie()">
+</div>
+
+<!-- 🔥 Latest -->
+<h2 class="section-title">🔥 Latest Movies</h2>
+<div class="movies">
+
+<div class="movie">
+<img src="https://image.tmdb.org/t/p/w500/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg">
+<div class="info">
+<h3>Spider-Man: Across the Spider-Verse</h3>
+<p>📅 2023 | ⭐ 8.6 | 🎭 Action, Animation</p>
+<button class="btn" onclick="watchMovie('https://www.youtube.com/watch?v=cqGjhVJWtEg')">Watch Movie</button>
+</div></div>
+
+<div class="movie">
+<img src="https://image.tmdb.org/t/p/w500/wRnbWt44nKjsFPrqSmwYki5vZtF.jpg">
+<div class="info">
+<h3>Doctor Strange in the Multiverse of Madness</h3>
+<p>📅 2022 | ⭐ 7.0 | 🎭 Action, Fantasy</p>
+<button class="btn" onclick="watchMovie('https://www.youtube.com/watch?v=aWzlQ2N6qqg')">Watch Movie</button>
+</div></div>
+
+<div class="movie">
+<img src="https://image.tmdb.org/t/p/w500/kyeqWdyUXW608qlYkRqosgbbJyK.jpg">
+<div class="info">
+<h3>Avatar</h3>
+<p>📅 2023 | ⭐ 6.5 | 🎭 Action</p>
+<button class="btn" onclick="watchMovie('https://www.youtube.com/watch?v=5PSNL1qE6VY')">Watch Movie</button>
+</div></div>
+
+<div class="movie">
+<img src="https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg">
+<div class="info">
+<h3>The Godfather</h3>
+<p>📅 1972 | ⭐ 9.2 | 🎭 Crime, Drama</p>
+<button class="btn" onclick="watchMovie('https://www.youtube.com/watch?v=sY1S34973zA')">Watch Movie</button>
+</div></div>
+
+</div>
+
+<!-- ⭐ Popular -->
+<h2 class="section-title">⭐ Popular Movies</h2>
+<div class="movies">
+
+<div class="movie">
+<img src="https://img.youtube.com/vi/4GPvYMKtrtI/hqdefault.jpg">
+<div class="info">
+<h3>Salaar</h3>
+<p>📅 2023 | ⭐ 6.9 | 🎭 Action</p>
+<button class="btn" onclick="watchMovie('https://www.youtube.com/watch?v=4GPvYMKtrtI')">Watch Movie</button>
+</div></div>
+
+<div class="movie">
+<img src="https://image.tmdb.org/t/p/w500/a26cQPRhJPX6GbWfQbvZdrrp9j9.jpg">
+<div class="info">
+<h3>Fight Club</h3>
+<p>📅 1999 | ⭐ 8.8 | 🎭 Drama, Thriller</p>
+<button class="btn" onclick="watchMovie('https://www.youtube.com/watch?v=SUXWAEX2jlg')">Watch Movie</button>
+</div></div>
+
+<div class="movie">
+<img src="https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg">
+<div class="info">
+<h3>The Dark Knight</h3>
+<p>📅 2008 | ⭐ 9.0 | 🎭 Action, Crime</p>
+<button class="btn" onclick="watchMovie('https://www.youtube.com/watch?v=EXeTwQWrcwY')">Watch Movie</button>
+</div></div>
+
+<div class="movie">
+<img src="https://image.tmdb.org/t/p/w500/1Xgjl22MkAZQUavvOeBqRehrvqO.jpg">
+<div class="info">
+<h3>A Haunting in Venice</h3>
+<p>📅 2023 | ⭐ 6.0 | 🎭 Action</p>
+<button class="btn" onclick="watchMovie('https://www.youtube.com/watch?v=4T_vA9A1T5Y')">Watch Movie</button>
+</div></div>
+
+</div>
+
+<!-- 🚀 Upcoming -->
+<h2 class="section-title">🚀 Upcoming Movies</h2>
+<div class="movies">
+
+<div class="movie">
+<img src="https://image.tmdb.org/t/p/w500/or06FN3Dka5tukK1e9sl16pB3iy.jpg">
+<div class="info">
+<h3>Avengers: Secret Wars</h3>
+<p>📅 2027 | ⭐ - | 🎭 Action, Sci‑Fi</p>
+<button class="btn" onclick="watchMovie('https://www.youtube.com/watch?v=6ZfuNTqbHE8')">Watch Movie</button>
+</div></div>
+
+<div class="movie">
+<img src="https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg">
+<div class="info">
+<h3>The Batman Part II</h3>
+<p>📅 2027 | ⭐ - | 🎭 Action, Crime</p>
+<button class="btn" onclick="watchMovie('https://www.youtube.com/watch?v=mqqft2x_Aa4')">Watch Movie</button>
+</div></div>
+
+<div class="movie">
+<img src="https://image.tmdb.org/t/p/w500/5weKu49pzJCt06OPpjvT80efnQj.jpg">
+<div class="info">
+<h3>Spider‑Man 4</h3>
+<p>📅 2027 | ⭐ - | 🎭 Action</p>
+<button class="btn" onclick="watchMovie('https://www.youtube.com/watch?v=JfVOs4VSpmA')">Watch Movie</button>
+</div></div>
+
+<div class="movie">
+<img src="https://image.tmdb.org/t/p/w500/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg">
+<div class="info">
+<h3>Wonder Woman 1984</h3>
+<p>📅 2020 | ⭐ 5.4 | 🎭 Action, Fantasy</p>
+<button class="btn" onclick="watchMovie('https://www.youtube.com/watch?v=sfM7_JLk-84')">Watch Movie</button>
+</div></div>
+
+</div>
+
+<script>
+function watchMovie(link){
+  try {
+    let newTab = window.open(link, "_blank");
+    if (!newTab) {
+      // fallback if popup blocked
+      window.location.href = link;
+    }
+  } catch(e) {
+    window.location.href = link;
+  }
+}
+function searchMovie(){
+  let input=document.getElementById("search").value.toLowerCase();
+  let movies=document.getElementsByClassName("movie");
+  for(let i=0;i<movies.length;i++){
+    let text=movies[i].innerText.toLowerCase();
+    movies[i].style.display = text.includes(input)?"block":"none";
+  }
+}
+</script>
+
+</body>
+</html>
